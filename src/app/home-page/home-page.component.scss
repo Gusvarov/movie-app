@@ -1,0 +1,23 @@
+h1 {
+    text-align: center;
+}
+
+.container {
+    h2 {
+        text-align: center;
+        cursor: pointer;
+    }
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 700px;
+        margin: auto;
+        }
+        p {
+            width: 450px;
+            span {
+                font-weight: bold;
+            }
+    }
+}
+

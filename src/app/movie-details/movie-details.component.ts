@@ -10,17 +10,33 @@ import { MoviesService } from '../home-page/movies.service';
 export class MovieDetailsComponent implements OnInit{
 
   constructor(private movieDetails: MoviesService) { }
-
+  movies = [];
   movieDetail = [];
-
+  movie = [];
+  
   ngOnInit() {
     this.movieDetails
     .getData()
     .subscribe((data: any) => {
-      console.log(data);
-      const item: any = data.results;
-      this.movieDetail = item;
-      console.log(item);
+      const movies: any = data.results;
+      this.movies = movies;
+      for(let movie of movies) {
+        this.movie = movie.id;
+      }
+      console.log(this.movie);
+    })
+  }
+  showMovieDetails() {
+    this.movies.forEach(movie => {
+      this.movieDetails
+        .getMovieDetails(movie.id)
+        .subscribe((data: any) => {
+          const movies: any = data;
+          // for(let movie in movies) {
+            this.movieDetail.push(movies);
+            console.log(this.movieDetail)
+          // } 
+        })
     })
   }
 }

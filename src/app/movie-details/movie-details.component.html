@@ -1,2 +1,7 @@
-<p *ngFor="let detail of movieDetail">{{detail.id}}</p>
+<p (click)="showMovieDetails()">text</p>
+<!-- <div *ngFor="let movie of movieDetail"><p>{{movie.id}}</p></div> -->
+<div *ngFor="let movieDetail of movieDetail">
+    <p *ngIf="movieDetail.id === movie">Key: <b>{{movieDetail.title}}</b> and Value: <b>{{movieDetail.budget}}</b></p>
+</div>
+
 

@@ -1,14 +1,17 @@
-<!-- <p (click)='onclick()'>home-page works!</p> -->
+<!-- <app-movie-details></app-movie-details> -->
 <h1>Popular Movies</h1>
 <div *ngFor="let movie of movies" class="container">
-    <h2 (click)="onclick()">{{movie.title}}</h2>
+    <h2 (click)="showMovieDetails()" *ngIf="movie.id"><a routerLink="/movieDetails">{{movie.title}}</a></h2>
     <div class="wrapper">
-        <p><span>Rating:</span> {{movie.popularity}}</p>
-        <p><span>Language:</span> {{movie.original_language}}</p>
-        <p><span>Release date:</span> {{movie.release_date}}</p>
-        <p><span>Users rating:</span> {{movie.vote_average}}</p>
-        <p><span>Overview:</span> {{movie.overview}}</p>
-        <img src="https://cinemazero.it/media/photologue/photos/temp/cache/jOzrELAzFxtMx2I4uDGHOotdfsS_Dko7cUI_admin_thumbnail.jpg
-        " alt="poster">
+        <div>
+            <img [src]="movie.poster" alt="poster">
+            <p><span>Overview:</span> {{movie.overview}}</p>
+        </div>
+        <div>
+            <p><span>Rating:</span> {{movie.popularity}}</p>
+            <p><span>Language:</span> {{movie.original_language}}</p>
+            <p><span>Release date:</span> {{movie.release_date}}</p>
+            <p><span>Users rating:</span> {{movie.vote_average}}</p>
+        </div>
     </div>
 </div>

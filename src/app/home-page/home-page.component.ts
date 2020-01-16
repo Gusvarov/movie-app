@@ -18,18 +18,14 @@ export class HomePageComponent implements OnInit {
     this.moviesService
     .getData()
     .subscribe((data: any) => {
-      const item: any = data.results;
-      this.movies = item;
+      const moviesArr: any = data.results;
+      this.movies = moviesArr;
+      console.log(data);
+        for(let movie of moviesArr) {
+          const baseUrl = 'https://image.tmdb.org/t/p/';
+          const fileSize = 'w200';
+          movie.poster = `${baseUrl}${fileSize}${movie.poster_path}`;
+        }
     })
-  } 
-  onclick() {
-    for (let movie of this.movies) {
-      this.moviesService
-        .onClick(movie.id)
-        .subscribe((data: any) => {
-          const item: any = data;
-          console.log(item.id);
-        })
-      }
   }
 }

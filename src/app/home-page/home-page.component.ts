@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { MoviesService } from './home-page.service';
+import { EventEmitter } from 'protractor';
 
 @Component({
   selector: 'app-home-page',
@@ -13,6 +14,10 @@ export class HomePageComponent implements OnInit {
 
   movies = [];
   movieDetails = []
+  
+
+  //@Input() movieId = 'neo'
+  //@Output() event = new EventEmitter()
 
   ngOnInit() {
     this.moviesService
@@ -20,7 +25,6 @@ export class HomePageComponent implements OnInit {
     .subscribe((data: any) => {
       const moviesArr: any = data.results;
       this.movies = moviesArr;
-      console.log(data);
         for(let movie of moviesArr) {
           const baseUrl = 'https://image.tmdb.org/t/p/';
           const fileSize = 'w200';
@@ -28,4 +32,12 @@ export class HomePageComponent implements OnInit {
         }
     })
   }
+  showMovieDetails(id) {
+    this.movies.forEach(movie => {
+      if (id === movie.id) {
+        return id;
+      }
+    })
+  }
+  
 }

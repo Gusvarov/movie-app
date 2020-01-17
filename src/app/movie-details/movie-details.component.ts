@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MoviesService } from '../movie-details/movie-details.service';
 
 @Component({
@@ -14,29 +14,38 @@ export class MovieDetailsComponent implements OnInit{
   movieDetail = [];
   movie = [];
   
+  @Input() homePageData;
+
+  setDataFromHomepage(data) {
+    this.homePageData = data;
+  }
+
   ngOnInit() {
     this.movieDetails
     .getData()
     .subscribe((data: any) => {
       const movies: any = data.results;
       this.movies = movies;
-      for(let movie of movies) {
-        this.movie = movie.id;
-      }
-      console.log(this.movie);
+      console.log(movies);
+      // for(let movie of movies) {
+      //   this.movie = movie;
+      //   console.log(this.movie)
+      // }
     })
   }
-  showMovieDetails() {
-    this.movies.forEach(movie => {
-      this.movieDetails
-        .getMovieDetails(movie.id)
-        .subscribe((data: any) => {
-          const movies: any = data;
-          // for(let movie in movies) {
-            this.movieDetail.push(movies);
-            console.log(this.movieDetail)
-          // } 
-        })
-    })
+  showMovieInfo() {
+    // this.movieDetail
+    // .getMovieDetails(id)
+    console.log(this.homePageData);
   }
 }
+
+//this.movieDetails
+      //   .getMovieDetails(movie.id)
+      //   .subscribe((data: any) => {
+      //     const movies: any = data;
+      //     // for(let movie in movies) {
+      //       this.movieDetail.push(movies);
+      //       console.log(this.movieDetail)
+      //     // } 
+      //   })

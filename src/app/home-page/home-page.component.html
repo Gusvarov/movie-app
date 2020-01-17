@@ -1,11 +1,11 @@
-<!-- <app-movie-details></app-movie-details> -->
+<!-- <app-movie-details [state] = 'movieId' (event)=setDataFromChild($event)></app-movie-details> -->
 <h1>Popular Movies</h1>
 <div *ngFor="let movie of movies" class="container">
-    <h2 (click)="showMovieDetails()" *ngIf="movie.id"><a routerLink="/movieDetails">{{movie.title}}</a></h2>
+    <h2 (event)="showMovieDetails(movie.id)"><a routerLink="/movieDetails">{{movie.title}}</a></h2>
     <div class="wrapper">
         <div>
             <img [src]="movie.poster" alt="poster">
-            <p><span>Overview:</span> {{movie.overview}}</p>
+            <p><span>Overview:{{movieId}}</span> {{movie.overview}}</p>
         </div>
         <div>
             <p><span>Rating:</span> {{movie.popularity}}</p>
@@ -15,3 +15,5 @@
         </div>
     </div>
 </div>
+<!-- 
+(click)="showMovieDetails(movie.id)" -->

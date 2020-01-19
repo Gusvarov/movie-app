@@ -13,7 +13,7 @@ export class MovieDetailsComponent implements OnInit{
   constructor(private movieDetails: MoviesService, private route: ActivatedRoute) { }
   
   movies = [];
-  movie;
+  movie = [];
   similarMovies = [];
   movieDetailposterPath: string;
   similarMoviePosterPath: string;

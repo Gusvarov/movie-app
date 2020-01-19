@@ -8,7 +8,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 const routes = [
   {path: '', component: HomePageComponent},
-  {path: 'movieDetails', component: MovieDetailsComponent}
+  {path: 'movieDetails/:id', component: MovieDetailsComponent}
 ];
 
 @NgModule({
@@ -16,7 +16,7 @@ const routes = [
     AppComponent,
     HomePageComponent,
     MovieDetailsComponent,
-    
+ 
   ],
   imports: [
     BrowserModule,

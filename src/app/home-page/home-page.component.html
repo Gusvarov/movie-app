@@ -1,7 +1,6 @@
-<!-- <app-movie-details [state] = 'movieId' (event)=setDataFromChild($event)></app-movie-details> -->
 <h1>Popular Movies</h1>
 <div *ngFor="let movie of movies" class="container">
-    <h2 (event)="showMovieDetails(movie.id)"><a routerLink="/movieDetails">{{movie.title}}</a></h2>
+    <h2 ><a routerLink="/movieDetails/{{movie.id}}">{{movie.title}}</a></h2>
     <div class="wrapper">
         <div>
             <img [src]="movie.poster" alt="poster">
@@ -15,5 +14,3 @@
         </div>
     </div>
 </div>
-<!-- 
-(click)="showMovieDetails(movie.id)" -->

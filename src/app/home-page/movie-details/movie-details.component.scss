@@ -1,8 +1,7 @@
-h1 {
-    text-align: center;
-}
-
 .container {
+    h1 {
+        text-align: center;
+    }
     h2 {
         text-align: center;
         cursor: pointer;
@@ -23,5 +22,16 @@ h1 {
                 font-weight: bold;
             }
     }
+    .similar-movies {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        width: 700px;
+        margin: auto;
+        }
+        p {
+            width: 450px;
+            span {
+                font-weight: bold;
+            }
+    }
 }
-

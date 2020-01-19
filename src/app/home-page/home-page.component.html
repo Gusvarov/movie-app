@@ -1,16 +1,18 @@
 <h1>Popular Movies</h1>
-<div *ngFor="let movie of movies" class="container">
-    <h2 ><a routerLink="/movieDetails/{{movie.id}}">{{movie.title}}</a></h2>
-    <div class="wrapper">
-        <div>
-            <img [src]="movie.poster" alt="poster">
-            <p><span>Overview:{{movieId}}</span> {{movie.overview}}</p>
-        </div>
-        <div>
-            <p><span>Rating:</span> {{movie.popularity}}</p>
-            <p><span>Language:</span> {{movie.original_language}}</p>
-            <p><span>Release date:</span> {{movie.release_date}}</p>
-            <p><span>Users rating:</span> {{movie.vote_average}}</p>
+<div class="container-wrapper">
+    <div *ngFor="let movie of movies" class="container">
+        <h2><a routerLink="/movieDetails/{{movie.id}}">{{movie.title}}</a></h2>
+        <div class="wrapper">
+            <div>
+                <img [src]="movie.poster" alt="poster">
+                <p><span>Overview:{{movieId}}</span> {{movie.overview}}</p>
+            </div>
+            <div>
+                <p><span>Rating:</span> {{movie.popularity}}</p>
+                <p><span>Language:</span> {{movie.original_language}}</p>
+                <p><span>Release date:</span> {{movie.release_date}}</p>
+                <p><span>Users rating:</span> {{movie.vote_average}}</p>
+            </div>
         </div>
     </div>
 </div>

@@ -12,26 +12,42 @@
     }
     .wrapper {
         display: grid;
-        grid-template-columns: 40% 60%;
+        grid-template-columns: 60% 40%;
         width: 700px;
         margin: auto;
+    }
+    .not-bold {
+        span {
+            font-weight: 200;
         }
+    }
         p {
             width: 450px;
+            a {
+                text-decoration: none;
+                color: #000;
+            }
             span {
                 font-weight: bold;
             }
     }
-    .similar-movies {
+    .similar-movies-wrapper {
         display: grid;
-        grid-template-columns: 40% 60%;
-        width: 700px;
-        margin: auto;
-        }
-        p {
-            width: 450px;
-            span {
-                font-weight: bold;
+        grid-template-columns: 1fr 1fr;
+        .similar-movies {
+            .description {
+                padding-top: 50px;
             }
+            display: grid;
+            grid-template-columns: 40% 60%;
+            width: 700px;
+            margin: auto;
+            }
+            p {
+                width: 450px;
+                span {
+                    font-weight: bold;
+                }
+        }
     }
 }

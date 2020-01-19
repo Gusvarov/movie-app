@@ -1,6 +1,5 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MoviesService } from './home-page.service';
-import { EventEmitter } from 'protractor';
 
 @Component({
   selector: 'app-home-page',
@@ -13,11 +12,7 @@ export class HomePageComponent implements OnInit {
   constructor(private moviesService: MoviesService) { }
 
   movies = [];
-  movieDetails = []
-  
-
-  //@Input() movieId = 'neo'
-  //@Output() event = new EventEmitter()
+  movieDetails = [];
 
   ngOnInit() {
     this.moviesService
@@ -32,12 +27,6 @@ export class HomePageComponent implements OnInit {
         }
     })
   }
-  showMovieDetails(id) {
-    this.movies.forEach(movie => {
-      if (id === movie.id) {
-        return id;
-      }
-    })
-  }
-  
 }
+
+ 

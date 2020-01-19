@@ -6,7 +6,8 @@
         </div>
         <div>
             <p><span>Rating:</span> {{movie.popularity}}</p>
-            <p *ngIf="movie.adult === false"><span>Age rate:</span> For any age</p>
+            <p *ngIf="movie.adult === false; else elseBlock"><span>Age rate: </span>For any age</p>
+            <ng-template #elseBlock><span>Age rate: </span>18+</ng-template>
             <p><span>Language:</span> {{movie.original_language}}</p>
             <p><span>Release date:</span> {{movie.release_date}}</p>
             <p><span>Users rating:</span> {{movie.vote_average}}</p>
@@ -27,7 +28,7 @@
             <div>
                 <h2><a routerLink="../{{movie.id}}" target="_blank">{{movie.title}}</a></h2>
                 <a routerLink="../{{movie.id}}" target="_blank"><img [src]="similarMoviePosterPath + movie.poster_path" alt="poster"></a>
-                <p><span>Overview:{{movieId}}</span> {{movie.overview}}</p>
+                <p><span>Overview:</span> {{movie.overview}}</p>
             </div>
             <div class="description">
                 <p><span>Rating:</span> {{movie.popularity}}</p>

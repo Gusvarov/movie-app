@@ -1,4 +1,7 @@
 .container {
+    .movie-title {
+        cursor: default;
+    }
     h1 {
         text-align: center;
     }
@@ -49,5 +52,14 @@
                     font-weight: bold;
                 }
         }
+    }
+}
+
+@media (max-width: 900px) {
+    #wrapper {
+        grid-template-columns: 1fr;
+    }
+    #similar-movies-wrapper {
+        grid-template-columns: 1fr !important;
     }
 }

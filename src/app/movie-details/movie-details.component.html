@@ -1,8 +1,8 @@
 <div class="container">
-    <h2>{{movie.title}}</h2>
-    <div class="wrapper">
+    <h2 class="movie-title">{{movie.title}}</h2>
+    <div class="wrapper" id="wrapper">
         <div>
-            <img src="https://image.tmdb.org/t/p/w400/{{movie.poster_path}}" alt="poster">
+            <img [src]="movieDetailposterPath" alt="poster">
         </div>
         <div>
             <p><span>Rating:</span> {{movie.popularity}}</p>
@@ -22,11 +22,11 @@
         </div>
     </div>
     <h1>Similar Movies</h1>
-    <div class="similar-movies-wrapper">
+    <div class="similar-movies-wrapper" id="similar-movies-wrapper"> 
         <div class="similar-movies" *ngFor="let movie of similarMovies">
             <div>
-                <h2><a routerLink="../{{movie.id}}">{{movie.title}}</a></h2>
-                <img src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="poster">
+                <h2><a routerLink="../{{movie.id}}" target="_blank">{{movie.title}}</a></h2>
+                <a routerLink="../{{movie.id}}" target="_blank"><img [src]="similarMoviePosterPath + movie.poster_path" alt="poster"></a>
                 <p><span>Overview:{{movieId}}</span> {{movie.overview}}</p>
             </div>
             <div class="description">

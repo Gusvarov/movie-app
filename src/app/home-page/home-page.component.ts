@@ -12,7 +12,6 @@ export class HomePageComponent implements OnInit {
   constructor(private moviesService: MoviesService) { }
 
   movies = [];
-  movieDetails = [];
 
   ngOnInit() {
     this.moviesService
@@ -21,9 +20,7 @@ export class HomePageComponent implements OnInit {
       const moviesArr: any = data.results;
       this.movies = moviesArr;
         for(let movie of moviesArr) {
-          const baseUrl = 'https://image.tmdb.org/t/p/';
-          const fileSize = 'w200';
-          movie.poster = `${baseUrl}${fileSize}${movie.poster_path}`;
+          movie.poster = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
         }
     })
   }

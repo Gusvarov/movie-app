@@ -1,10 +1,10 @@
 <h1>Popular Movies</h1>
-<div class="container-wrapper">
+<div class="container-wrapper" id="container-wrapper">
     <div *ngFor="let movie of movies" class="container">
         <h2><a routerLink="/movieDetails/{{movie.id}}">{{movie.title}}</a></h2>
         <div class="wrapper">
             <div>
-                <img [src]="movie.poster" alt="poster">
+                <img [src]="movie.poster" routerLink="/movieDetails/{{movie.id}}" alt="poster">
                 <p><span>Overview:{{movieId}}</span> {{movie.overview}}</p>
             </div>
             <div>

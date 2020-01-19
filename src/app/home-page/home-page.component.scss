@@ -8,7 +8,11 @@ h1 {
 .container-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    width: 95%;
     .container {
+        img {
+            cursor: pointer;
+        }
         h2 {
             text-align: center;
             cursor: pointer;
@@ -32,4 +36,8 @@ h1 {
     }
 }
 
-
+@media (max-width: 950px) {
+    #container-wrapper {
+        grid-template-columns: 1fr;
+    }
+}

@@ -11,33 +11,32 @@ import { ActivatedRoute} from '@angular/router';
 export class MovieDetailsComponent implements OnInit{
 
   constructor(private movieDetails: MoviesService, private route: ActivatedRoute) { }
+  
   movies = [];
-  movieDetail = [];
   movie = [];
   similarMovies = [];
-
+  movieDetailposterPath: string;
+  similarMoviePosterPath: string;
   id: number;
   
   ngOnInit() {
     this.movieDetails
     .getData()
     .subscribe((data: any) => {
-      const movies: any = data.results;
-      this.movies = movies;
+      this.movies = data.results;
     })
     this.id = +this.route.snapshot.params.id;
-    console.log(this.id);
     this.movieDetails
     .getMovieDetails(this.id)
     .subscribe((data: any) => {
       this.movie = data;
-      console.log(data);
+      this.movieDetailposterPath = `https://image.tmdb.org/t/p/w400/${data.poster_path}`;
     })
     this.movieDetails
     .getSimilarMovies(this.id)
     .subscribe((data: any) => {
       this.similarMovies = data.results;
-      console.log(this.similarMovies);
+     this.similarMoviePosterPath = `https://image.tmdb.org/t/p/w200/`;
     })
   }
 }

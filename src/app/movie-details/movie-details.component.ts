@@ -13,8 +13,8 @@ export class MovieDetailsComponent implements OnInit{
 
   constructor(private movieDetails: MovieDetailsService, private route: ActivatedRoute) { }
   
-  movie = [];
-  similarMovies = [];
+  movie: any = [];
+  similarMovies: any = [];
   posterPathUrl: string = 'https://image.tmdb.org/t/p/';
   movieDetailposterPath: string;
   similarMoviePosterPath: string;

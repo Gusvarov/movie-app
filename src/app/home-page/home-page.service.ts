@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { MainConfig } from '../mainConfig.module';
 
 @Injectable()
 export class HomePageService {
     constructor(private http: HttpClient) { }
 
     getData() {
-        return this.http.get('https://api.themoviedb.org/3/movie/popular?api_key=8d148f368870f05017675f58b427b87b&language=en-US&page=1');
+        return this.http.get(`${MainConfig.pathUrl}popular?api_key=${MainConfig.apiKey}&${MainConfig.language}&page=1`);
     }
 }

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieDetailsService } from '../movie-details/movie-details.service';
 import { ActivatedRoute} from '@angular/router';
+import { MainConfig } from '../mainConfig.module';
 
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
-  providers: [MovieDetailsService],
+  providers: [MovieDetailsService, MainConfig],
   styleUrls: ['./movie-details.component.scss']
 })
 export class MovieDetailsComponent implements OnInit{

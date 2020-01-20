@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { HomePageService } from './home-page.service';
+import { MainConfig } from '../mainConfig.module';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  providers: [HomePageService],
+  providers: [HomePageService, MainConfig],
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {

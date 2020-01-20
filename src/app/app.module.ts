@@ -6,11 +6,6 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
-const routes = [
-  {path: '', component: HomePageComponent},
-  {path: 'movieDetails/:id', component: MovieDetailsComponent}
-];
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +16,10 @@ const routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot([
+      {path: '', component: HomePageComponent},
+      {path: 'movieDetails/:id', component: MovieDetailsComponent}
+    ], { useHash: false })
   ],
   providers: [],
   bootstrap: [AppComponent]

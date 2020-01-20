@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { MainConfig } from '../mainConfig.module';
+import { MainConfig } from '../app-config.constant';
 
 @Injectable()
 export class HomePageService {
     constructor(private http: HttpClient) { }
 
     getData() {
-        return this.http.get(`${MainConfig.pathUrl}popular?api_key=${MainConfig.apiKey}&${MainConfig.language}&page=1`);
+        return this.http.get(`${MainConfig.PATH_URL}popular?api_key=${MainConfig.API_KEY}&${MainConfig.LANGUAGE}&page=1`);
     }
 }

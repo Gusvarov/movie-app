@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { MainConfig } from '../mainConfig.module';
+import { MainConfig } from '../app-config.constant';
 
 @Injectable()
 export class MovieDetailsService {
     constructor(private http: HttpClient) { }
 
     getMovieDetails(id) {
-        return this.http.get(`${MainConfig.pathUrl}${id}?api_key=${MainConfig.apiKey}&${MainConfig.language}`);
+        return this.http.get(`${MainConfig.PATH_URL}${id}?api_key=${MainConfig.API_KEY}&${MainConfig.LANGUAGE}`);
     }
 
     getSimilarMovies(id) {
-        return this.http.get(`${MainConfig.pathUrl}${id}/similar?api_key=${MainConfig.apiKey}&${MainConfig.language}`)
+        return this.http.get(`${MainConfig.PATH_URL}${id}/similar?api_key=${MainConfig.API_KEY}&${MainConfig.LANGUAGE}`)
     }
 }

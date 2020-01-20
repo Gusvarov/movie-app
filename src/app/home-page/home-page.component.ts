@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomePageService } from './home-page.service';
-import { MainConfig } from '../mainConfig.module';
+import { MainConfig } from '../app-config.constant';
 
 @Component({
   selector: 'app-home-page',

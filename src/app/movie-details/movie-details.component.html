@@ -5,21 +5,21 @@
             <img [src]="movieDetailposterPath" alt="poster">
         </div>
         <div>
-            <p><span>Rating:</span> {{movie.popularity}}</p>
+            <p><span>Rating: </span>{{movie.popularity}}</p>
             <p *ngIf="movie.adult === false; else elseBlock"><span>Age rate: </span>For any age</p>
             <ng-template #elseBlock><span>Age rate: </span>18+</ng-template>
-            <p><span>Language:</span> {{movie.original_language}}</p>
-            <p><span>Release date:</span> {{movie.release_date}}</p>
-            <p><span>Users rating:</span> {{movie.vote_average}}</p>
-            <p><span>Budget:</span> {{movie.budget}}$</p>
-            <p><span>Revenue:</span> {{movie.revenue}}$</p>
+            <p><span>Language: </span>{{movie.original_language}}</p>
+            <p><span>Release date: </span>{{movie.release_date}}</p>
+            <p><span>Users rating: </span>{{movie.vote_average}}</p>
+            <p><span>Budget: </span>{{movie.budget}}$</p>
+            <p><span>Revenue: </span>{{movie.revenue}}$</p>
             <p><span>Homepage: </span><a href="{{movie.homepage}}">{{movie.homepage}}</a></p>
             <p class="not-bold"><b>Genres: </b> <span *ngFor="let genre of movie.genres">{{genre.name}}, </span></p>
-            <p class="not-bold"><b >Production companies: </b> <span *ngFor="let companies of movie.production_companies">{{companies.name}}, </span></p>
-            <p class="not-bold"><b >Production countries: </b> <span *ngFor="let countries of movie.production_countries">{{countries.name}}, </span></p>
-            <p class="not-bold"><b >Spoken languages: </b> <span *ngFor="let languages of movie.spoken_languages">{{languages.name}}, </span></p>
-            <p><span>Status:</span> {{movie.status}}</p>
-            <p><span>Overview:</span> {{movie.overview}}</p>
+            <p class="not-bold"><b>Production companies: </b> <span *ngFor="let companies of movie.production_companies">{{companies.name}}, </span></p>
+            <p class="not-bold"><b>Production countries: </b> <span *ngFor="let countries of movie.production_countries">{{countries.name}}, </span></p>
+            <p class="not-bold"><b>Spoken languages: </b> <span *ngFor="let languages of movie.spoken_languages">{{languages.name}}, </span></p>
+            <p><span>Status: </span>{{movie.status}}</p>
+            <p><span>Overview: </span>{{movie.overview}}</p>
         </div>
     </div>
     <h1>Similar Movies</h1>
@@ -31,10 +31,10 @@
                 <p><span>Overview:</span> {{movie.overview}}</p>
             </div>
             <div class="description">
-                <p><span>Rating:</span> {{movie.popularity}}</p>
-                <p><span>Language:</span> {{movie.original_language}}</p>
-                <p><span>Release date:</span> {{movie.release_date}}</p>
-                <p><span>Users rating:</span> {{movie.vote_average}}</p>
+                <p><span>Rating: </span>{{movie.popularity}}</p>
+                <p><span>Language: </span>{{movie.original_language}}</p>
+                <p><span>Release date: </span>{{movie.release_date}}</p>
+                <p><span>Users rating: </span>{{movie.vote_average}}</p>
             </div>
         </div>
     </div>

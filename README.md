@@ -1,3 +1,5 @@
+App deployed at: https://movie-app-ecru-kappa.now.sh/
+
 # MovieApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
